@@ -1,0 +1,74 @@
+```python
+a = []
+b = []
+c = []
+a = input('아버지의 Rh 혈액형을 입력하세요. Rh+Rh+/Rh+Rh-/Rh-Rh- 중에 하나 선택')
+b = input('어머니의 Rh 혈액형을 입력하세요. Rh+Rh+/Rh+Rh-/Rh-Rh- 중에 하나 선택')
+
+if a == 'Rh+Rh+' and  b == 'Rh+Rh+' :
+    c.append('Rh+Rh+')
+    c.append(100)
+    c.append('Rh+Rh-')
+    c.append(0)
+    c.append('Rh-Rh-')
+    c.append(0)
+elif a == 'Rh+Rh+' and  b == 'Rh+Rh-' :
+    c.append('Rh+Rh+')
+    c.append(50)
+    c.append('Rh+Rh-')
+    c.append(50)
+    c.append('Rh-Rh-')
+    c.append(0)
+elif a == 'Rh+Rh-' and  b == 'Rh+Rh+' :
+    c.append('Rh+Rh+')
+    c.append(50)
+    c.append('Rh+Rh-')
+    c.append(50)
+    c.append('Rh-Rh-')
+    c.append(0)
+elif a == 'Rh+Rh-' and  b == 'Rh+Rh-' :
+    c.append('Rh+Rh+')
+    c.append(25)
+    c.append('Rh+Rh-')
+    c.append(50)
+    c.append('Rh-Rh-')
+    c.append(25)
+elif a == 'Rh+Rh-' and  b == 'Rh-Rh-' :
+    c.append('Rh+Rh+')
+    c.append(0)
+    c.append('Rh+Rh-')
+    c.append(50)
+    c.append('Rh-Rh-')
+    c.append(50)
+elif a == 'Rh-Rh-' and  b == 'Rh+Rh-' :
+    c.append('Rh+Rh+')
+    c.append(0)
+    c.append('Rh+Rh-')
+    c.append(50)
+    c.append('Rh-Rh-')
+    c.append(50)
+elif a == 'Rh-Rh-' and  b == 'Rh-Rh-' :
+    c.append('Rh+Rh+')
+    c.append(0)
+    c.append('Rh+Rh-')
+    c.append(0)
+    c.append('Rh-Rh-')
+    c.append(100)
+
+X = c[1]
+Y = c[3]
+Z = c[5]
+
+import matplotlib.pyplot as plt
+plt.figure(figsize=(3,2), dpi=300)
+
+size = [X, Y, Z]  
+labels = 'Rh+Rh+', 'Rh+Rh-', 'Rh-Rh-'
+colors = ['hotpink', 'blueviolet', 'lightgray']
+
+plt.title('Rh 혈액형 존재비율')
+plt.pie(size, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+
+plt.axis('equal')
+plt.show()
+```
